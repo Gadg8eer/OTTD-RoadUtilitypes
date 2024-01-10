@@ -1,6 +1,0 @@
-/* PNMLs for Recycled Infrastructure Set */
-#include "src/header.pnml"
-#include "src/templates_roads.pnml"
-#include "src/roadtypes_roads.pnml"
-#include "src/templates_ground.pnml"
-#include "railtrack_tramway.pnml"
