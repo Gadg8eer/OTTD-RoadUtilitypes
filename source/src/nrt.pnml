@@ -1,0 +1,71 @@
+//========================
+//begin defining roadtypes
+//========================
+roadtypetable {
+ 	ROAD, RABN,
+	ELRD, RABE,
+
+	/* Non-Standardized - Roadtypes */
+	"_TRD", TRD_,
+
+	/* Non-Standardized - Old URS Pipes */
+	INDP, UTIL, PIPE,
+	
+	/* Standardized - Utility Roadtype Set 2: Pipes */
+	EAaG, EAAG, EABG, EACG, EAcG,
+	
+	/* Non-Standardized - Old SmartRoads */
+	SMRT, SMTS,
+	
+	/* Standardized - SmartRoads */
+	FAAS, FAcS;
+}
+
+tramtypetable {
+ 	RAIL, RABN, ELRL, RABE,
+	
+	/* Standardized - Tramtypes */
+	EAaN, EAAN, EABN, EACN, EAcN, EAaG, EAAG, EABG, EACG, EAcG, EAaE, EAAE, EABE, EACE, EAcE,
+	
+	/* Standardized - Quast65's Metro Tramtypes */
+	MAA3, MAB3, MAC3,
+	
+	/* Non-Standardized - Tramtypes */
+	INVI//, MTR0, MTR1, MTR2, MTR3, MTR4, MTR5, MTR6,
+	
+	/* Standardized - Utility R&TT Set: Lighting, Electric & Telecom */
+	EGBG, ETBG,
+	
+	/* Non-Standardized - Utility R&TT Set: Lighting, Electric & Telecom */
+	Wire, Tele, Gg8r;
+}
+
+item(FEAT_ROADTYPES, item_road) {
+	property {
+		label:							"ROAD";
+		powered_roadtype_list:			["ROAD", "OLD_", "TRD_", "_TRD", "PIPE", "IAaN", "IAAN", "IABN", "IACN", "IAcN"];
+//		roadtype_flags:					bitmask(ROADTYPE_FLAG_HIDDEN);
+}
+
+item(FEAT_TRAMTYPES, item_rail) {
+	property {
+		label:							"RAIL";
+		powered_tramtype_list:			["TELE", "EAaG"];
+//		roadtype_flags:					bitmask(ROADTYPE_FLAG_HIDDEN);
+}
+
+item(FEAT_TRAMTYPES, item_elrl) {
+	property {
+		label:							"RAIL";
+		powered_tramtype_list:			["ELRL", "RABE"];
+		alternative_tramtype_list:		["TELE", "WIRE"];
+		roadtype_flags:					bitmask(ROADTYPE_FLAG_CATENARY);
+}
+
+item(FEAT_TRAMTYPES, item_invisible) {
+	property {
+		label:							"INVI";
+//		powered_tramtype_list:			["Gg8r"];
+		alternative_tramtype_list:		["TELE", "Tele", "WIRE", "Wire", "Gg8r"];
+		roadtype_flags:					bitmask(ROADTYPE_FLAG_CATENARY);
+}

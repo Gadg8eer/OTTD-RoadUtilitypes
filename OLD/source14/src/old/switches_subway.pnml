@@ -1,0 +1,201 @@
+
+// --- Sprite sets
+
+// Underground sprites
+spriteset(underground_vehicle, "gfx/Shadows.png") {
+	template_tram_28(0, 60)
+}
+
+alternative_sprites (underground_vehicle, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/Shadows32.png") {
+	template_tram_28(0, 60)
+}
+
+spriteset(invisible, "gfx/empty.png") {
+	[0, 0]
+}
+
+
+// --- BEGIN VEHICLE-AGNOSTIC SWITCHES ---
+
+// Cargo subtypes -- no. of carriages
+
+switch(FEAT_ROADVEHS, SELF, tube_cargo_subtype_text, cargo_subtype) {
+    0: return string(STR_SUBTYPE_LENGTH_2);
+    1: return string(STR_SUBTYPE_LENGTH_3);
+	2: return string(STR_SUBTYPE_LENGTH_4);
+	3: return string(STR_SUBTYPE_LENGTH_5);
+	4: return string(STR_SUBTYPE_LENGTH_6);
+	5: return string(STR_SUBTYPE_LENGTH_7);
+	6: return string(STR_SUBTYPE_LENGTH_8);
+    return CB_RESULT_NO_TEXT;
+}
+
+
+// Length switches
+
+switch(FEAT_ROADVEHS, SELF, shorten_2_carriage_vehicle, position_in_consist) {
+    /* Make carriages 3-8 invisible, extend carriage 2  */
+	0..7: return 1;
+	return CB_FAILED;
+}
+
+switch(FEAT_ROADVEHS, SELF, shorten_3_carriage_vehicle, position_in_consist) {
+    /* Make carriages 4-8 invisible, extend carriage 3  */
+	0..1: return 7;
+    2..7: return 1;
+	return CB_FAILED;
+}
+
+switch(FEAT_ROADVEHS, SELF, shorten_4_carriage_vehicle, position_in_consist) {
+    /* Make carriages 5-8 invisible, extend carriage 4  */
+	0..2: return 7;
+	3..7: return 1;
+	return CB_FAILED;
+}
+
+switch(FEAT_ROADVEHS, SELF, shorten_5_carriage_vehicle, position_in_consist) {
+    /* Make carriages 6-8 invisible, extend carriage 5  */
+	0..3: return 7;
+	4..7: return 1;
+	return CB_FAILED;
+}
+
+switch(FEAT_ROADVEHS, SELF, shorten_6_carriage_vehicle, position_in_consist) {
+    /* Make carriages 7-8 invisible, extend carriage 6  */
+	0..4: return 7;
+	5..7: return 1;
+	return CB_FAILED;
+}
+
+switch(FEAT_ROADVEHS, SELF, shorten_7_carriage_vehicle, position_in_consist) {
+    /* Make carriage 8 invisible, extend carriage 7  */
+	0..5: return 7;
+	6..7: return 1;
+	return CB_FAILED;
+}
+
+
+switch(FEAT_ROADVEHS, SELF, tube_shorten_vehicles, cargo_subtype) {
+    0: shorten_2_carriage_vehicle;
+	1: shorten_3_carriage_vehicle;
+	2: shorten_4_carriage_vehicle;
+	3: shorten_5_carriage_vehicle;
+	4: shorten_6_carriage_vehicle;
+	5: shorten_7_carriage_vehicle;
+	// 8-carriage vehicle needs no shortening
+    return 7;
+}
+
+
+// Capacity switches
+
+switch(FEAT_ROADVEHS, SELF, tube_2_carriage_capacity_switch, position_in_consist) {
+	0: return 40+(param_capacities*60);
+    1..6: return 0;
+	7: return 40+(param_capacities*60);
+	return CB_FAILED;
+}
+
+switch(FEAT_ROADVEHS, SELF, tube_3_carriage_capacity_switch, position_in_consist) {
+	0..2: return 40+(param_capacities*60);
+	3..7: return 0;
+	return CB_FAILED;
+}
+
+switch(FEAT_ROADVEHS, SELF, tube_4_carriage_capacity_switch, position_in_consist) {
+	0..3: return 40+(param_capacities*60);
+	4..7: return 0;
+	return CB_FAILED;
+}
+
+switch(FEAT_ROADVEHS, SELF, tube_5_carriage_capacity_switch, position_in_consist) {
+	0..4: return 40+(param_capacities*60);
+	5..7: return 0;
+	return CB_FAILED;
+}
+
+switch(FEAT_ROADVEHS, SELF, tube_6_carriage_capacity_switch, position_in_consist) {
+	0..5: return 40+(param_capacities*60);
+	6..7: return 0;
+	return CB_FAILED;
+}
+
+switch(FEAT_ROADVEHS, SELF, tube_7_carriage_capacity_switch, position_in_consist) {
+	0..6: return 40+(param_capacities*60);
+	7: return 0;
+	return CB_FAILED;
+}
+
+
+switch(FEAT_ROADVEHS, SELF, tube_cargo_capacities_switch, cargo_subtype) {
+    /* Pass cargo subtype to next switch  */
+	0: tube_2_carriage_capacity_switch;
+    1: tube_3_carriage_capacity_switch;
+    2: tube_4_carriage_capacity_switch;
+	3: tube_5_carriage_capacity_switch;
+	4: tube_6_carriage_capacity_switch;
+	5: tube_7_carriage_capacity_switch;
+	// 8-carriage vehicles need no reduction in capacity
+	return 40+(param_capacities*60);
+}
+
+
+// Underground Invisibility switches
+
+switch(FEAT_ROADVEHS, SELF, tube_2_carriage_graphics_switch, position_in_consist) {
+	0: underground_vehicle;
+    1..6: invisible;
+	7: underground_vehicle;
+	return CB_FAILED;
+}
+
+switch(FEAT_ROADVEHS, SELF, tube_3_carriage_graphics_switch, position_in_consist) {
+	0..2: underground_vehicle;
+	3..7: invisible;
+	return CB_FAILED;
+}
+
+switch(FEAT_ROADVEHS, SELF, tube_4_carriage_graphics_switch, position_in_consist) {
+	0..3: underground_vehicle;
+	4..7: invisible;
+	return CB_FAILED;
+}
+
+switch(FEAT_ROADVEHS, SELF, tube_5_carriage_graphics_switch, position_in_consist) {
+	0..4: underground_vehicle;
+	5..7: invisible;
+	return CB_FAILED;
+}
+
+switch(FEAT_ROADVEHS, SELF, tube_6_carriage_graphics_switch, position_in_consist) {
+	0..5: underground_vehicle;
+	6..7: invisible;
+	return CB_FAILED;
+}
+
+switch(FEAT_ROADVEHS, SELF, tube_7_carriage_graphics_switch, position_in_consist) {
+	0..6: underground_vehicle;
+	7: invisible;
+	return CB_FAILED;
+}
+
+switch(FEAT_ROADVEHS, SELF, tube_8_carriage_graphics_switch, position_in_consist) {
+	0..7: underground_vehicle;
+	return CB_FAILED;
+}
+
+
+switch(FEAT_ROADVEHS, SELF, underground_tube_GFX_switch, cargo_subtype) {
+    /* Pass cargo subtype to next switch  */
+	0: tube_2_carriage_graphics_switch;
+    1: tube_3_carriage_graphics_switch;
+    2: tube_4_carriage_graphics_switch;
+	3: tube_5_carriage_graphics_switch;
+	4: tube_6_carriage_graphics_switch;
+	5: tube_7_carriage_graphics_switch;
+	6: tube_8_carriage_graphics_switch;
+	return CB_FAILED;
+}
+
+
+// --- END VEHICLE AGNOSTIC SWITCHES ---

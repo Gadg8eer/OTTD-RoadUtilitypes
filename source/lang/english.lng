@@ -1,0 +1,222 @@
+##grflangid 0x01
+STR_GRF_NAME                            						:URS2 - Utility R&TT Set 5.0
+STR_GRF_DESCRIPTION												:Roadtypes for use with Utility Truck & Tram Set and Quast65's Tram Track Set. Made from reused GPL v2 content. Credits to Ufiby, DJ Nekkid, McZapkie, planetmaker, GarryG, Quast65, Zimmlock, George, Red*Star, Purno, Pikkabird, Dante123, Zero.Eight, and the Tycoonez.com community. Visit website if I forgot to credit you!
+
+STR_PARAM_6_NAME               :Enable houses along highways
+STR_PARAM_6_DESC               :By default, houses are forbidden from spawning alongside highways; activating this option enables it.{}{} {ORANGE}It is highly recommended to turn this on for multiplayer servers to prevent griefing from malicious or careless players.{BLACK}
+
+STR_URSO					   :Recycled URS Depots NewObjects
+
+# Metro
+STR_CAPACITY_PARAM_NAME                         :Vehicle capacities
+STR_CAPACITY_PARAM_DESC                         :Determine whether the subway consists' capacities reflect seated-only capacities, or seated + standing-room capacities (which are much larger).
+STR_CAPACITY_PARAM_SEATED                       :Seated-only
+STR_CAPACITY_PARAM_STANDING                     :Seated + standing-room
+
+STR_TRAM_PARAM_NAME                                     :Subway Roadtype
+STR_TRAM_PARAM_DESC                                     :Determines whether subways are regular road vehicles or trams.
+
+STR_ROADVEHICLES                                        :Regular RVs
+STR_TRAMS                                                       :Trams
+
+STR_NAME_GATE_TUBE                                      :Gate Tube
+STR_NAME_NEW_WORKS_TUBE                         :New Works Tube
+STR_NAME_VICTORIA_TUBE                          :Victoria Tube
+STR_NAME_ADTRANZ_TUBE                           :Adtranz Tube
+
+STR_NAME_SHINKU_EKI                                     :Shinkū-eki Double-decker Subway
+
+STR_TUBE_PURCHASE_TEXT                          :{}Available in 2-8 carriage consists.{}Capacity shown is for 8-carriage consist.
+
+
+STR_SUBTYPE_LENGTH_2                            :(2 Carriages)
+STR_SUBTYPE_LENGTH_3                            :(3 Carriages)
+STR_SUBTYPE_LENGTH_4                            :(4 Carriages)
+STR_SUBTYPE_LENGTH_5                            :(5 Carriages)
+STR_SUBTYPE_LENGTH_6                            :(6 Carriages)
+STR_SUBTYPE_LENGTH_7                            :(7 Carriages)
+STR_SUBTYPE_LENGTH_8                            :(8 Carriages)
+
+# Wires
+STR_PARAM_COMMERCIAL_CARRIERS									:Commercial information carriers
+STR_PARAM_COMMERCIAL_CARRIERS_DESC								:Enable TELEX and TCP/IP for commercial use.
+
+STR_PARAM_NAME_PURCHASE_COST_UTIL    		:Carrier purchase cost modifier
+STR_PARAM_DESC_PURCHASE_COST_UTIL    		:Use this option to change the purchase cost of telecomunication carriers from this set.
+STR_PARAM_NAME_RUNNING_COST_UTIL     		:Carrier running cost modifier
+STR_PARAM_DESC_RUNNING_COST_UTIL     		:Use this option to change the running cost of carriers from this set.
+STR_PARAM_COST_UTIL_H               		: Half
+STR_PARAM_COST_UTIL_N               		: Normal
+STR_PARAM_COST_UTIL_D               		: Double
+
+STR_NAME_POWER_LINES											:Utility lines
+STR_POWER_LINES_TOOLBAR											:Utility wires
+STR_POWER_LINES_MENU											:Utility Lines
+STR_POWER_LINES_BUILD_WINDOW									:New utilities
+STR_POWER_LINES_AUTOREPLACE										:Utility Upgrade
+STR_POWER_LINES_NEW_ENGINE										:Utility Installation
+
+STR_VEHICLE_GRAPHICS_NAME										:Utility 'vehicle' graphics
+STR_VEHICLE_GRAPHICS_DESC										:Determines what the utility line 'vehicles' should be graphically represented as -- sparks, arrows, or something else. Currently only sparks are available.
+
+STR_PARAM_SPARKS												:Sparks
+
+STR_NAME_ELECTRICITY											:Electricity
+STR_SHORT_MWH													:{COMMA} MWh
+STR_UNITS_ELECTRICITY											:{COMMA} MWh of Electricity
+STR_TINY_ELECTRICITY											:{TINYFONT}EL
+
+STR_NAME_POWER													:Electricity
+STR_SHORT_KWH													:{COMMA} KWh
+STR_UNITS_POWER													:{COMMA} KWh of Electricity
+STR_TINY_POWER													:{TINYFONT}EL
+
+STR_NAME_DC_TRANSMITTER											:25 Megawatt DC Transmitter
+STR_DC_TRANSMITTER_ADDITIONAL_TEXT								:Very Low Reliabilty
+
+STR_NAME_AC_TRANSMITTER											:25 Megawatt Prototype AC Transmitter
+STR_AC_TRANSMITTER_ADDITIONAL_TEXT								:Low Reliability
+
+STR_NAME_HVAC_TRANSMITTER										:25 Megawatt AC Transmitter
+STR_HVAC_TRANSMITTER_ADDITIONAL_TEXT							:Medium Reliability
+
+STR_NAME_VHVAC_TRANSMITTER										:50 Megawatt AC Transmitter
+STR_VHVAC_TRANSMITTER_ADDITIONAL_TEXT							:High Reliability
+
+STR_NAME_EHVAC_TRANSMITTER										:100 Megawatt AC Transmitter
+STR_EHVAC_TRANSMITTER_ADDITIONAL_TEXT							:Very High Reliability
+
+STR_NAME_UHVAC_TRANSMITTER										:150 Megawatt AC Transmitter
+STR_UHVAC_TRANSMITTER_ADDITIONAL_TEXT							:Extreme Reliability
+
+STR_NAME_SUBSTATION												:Substation
+
+# Wired Carriers
+STR_VISIBLE     												:-visible carrier 
+STR_INVISIBLE     												:-invisible carrier
+STR_ONLY_1	     												: Carriers cannot go in packets.
+
+STR_TLP_NAME													:Optical Telegraph
+STR_TLP_DESC													:"Logic train" for storage/forwarding track occupancy information (non-commercial service for company internal communication). Can send messages, but a horse would be faster. 
+STR_TLG_NAME													:Telegraph
+STR_TLG_DESC													:Can send 300 messages a distance of 50 miles (80 km) every 17 hours.
+STR_TLX_NAME													:TELEX
+STR_TLX_DESC													:Can send 300 messages a distance of 744 miles (1200 km) every 24 hours. Commercial teleprinters network for (e)mail exchange. Low channel capacity.
+STR_E10_NAME													:10BASE-T Ethernet
+STR_E10_DESC													:Commercial computer network, medium channel capacity.
+STR_E100_NAME													:40GBASE-T Ethernet
+STR_E100_DESC													:Commercial computer network, high channel capacity.
+
+STR_NAME_RED_ROAD                                               :(Name 0x1B) Red Electric Road
+STR_TOOLBAR_CAPTION_RED_ROAD                                    :(Toolbar Caption 0x09) Red Electric Road
+STR_MENU_TEXT_RED_ROAD                                          :(Menu Text 0x0A) Red Electric Road
+STR_BUILD_WINDOW_CAPTION_RED_ROAD                               :(Build Window Caption 0x0B) Red Electric Road
+STR_AUTOREPLACE_TEXT_RED_ROAD                                   :(Autoreplace Text 0x0C) Red Electric Road
+STR_NEW_ENGINE_TEXT_RED_ROAD                                    :(New Engine Text 0x0D) red Electric Road
+
+STR_NAME_BLUE_ROAD                                              :(Name 0x1B) Blue Road
+STR_TOOLBAR_CAPTION_BLUE_ROAD                                   :(Toolbar Caption 0x09) Blue Road
+STR_MENU_TEXT_BLUE_ROAD                                         :(Menu Text 0x0A) Blue Road
+STR_BUILD_WINDOW_CAPTION_BLUE_ROAD                              :(Build Window Caption 0x0B) Blue Road
+STR_AUTOREPLACE_TEXT_BLUE_ROAD                                  :(Autoreplace Text 0x0C) Blue Road
+STR_NEW_ENGINE_TEXT_BLUE_ROAD                                   :(New Engine Text 0x0D) Blue Road
+
+STR_NAME_YELLOW_ROAD                                            :(Name 0x1B) Yellow Road
+STR_TOOLBAR_CAPTION_YELLOW_ROAD                                 :(Toolbar Caption 0x09) Yellow Road
+STR_MENU_TEXT_YELLOW_ROAD                                       :(Menu Text 0x0A) Yellow Road
+STR_BUILD_WINDOW_CAPTION_YELLOW_ROAD                            :(Build Window Caption 0x0B) Yellow Road
+STR_AUTOREPLACE_TEXT_YELLOW_ROAD                                :(Autoreplace Text 0x0C) Yellow Road
+STR_NEW_ENGINE_TEXT_YELLOW_ROAD                                 :(New Engine Text 0x0D) Yellow Road
+
+STR_NAME_GREEN_TRAM                                             :(Name 0x1B) Green Tram
+STR_TOOLBAR_CAPTION_GREEN_TRAM                                  :(Toolbar Caption 0x09) Green Tram
+STR_MENU_TEXT_GREEN_TRAM                                        :(Menu Text 0x0A) Green Tram
+STR_BUILD_WINDOW_CAPTION_GREEN_TRAM                             :(Build Window Caption 0x0B) Green Tram
+STR_AUTOREPLACE_TEXT_GREEN_TRAM                                 :(Autoreplace Text 0x0C) Green Tram
+STR_NEW_ENGINE_TEXT_GREEN_TRAM                                  :(New Engine Text 0x0D) Green Tram
+
+STR_NAME_RAAN_ROAD	                                    		:Cobblestone Road
+STR_TOOLBAR_CAPTION_RAAN_ROAD                            		:Cobblestone Road
+STR_MENU_TEXT_RAAN_ROAD                                  		:Cobblestone Road
+STR_BUILD_WINDOW_CAPTION_RAAN_ROAD                       		:Cobblestone Road
+STR_AUTOREPLACE_TEXT_RAAN_ROAD                           		:Cobblestone Road Vehicle
+STR_NEW_ENGINE_TEXT_RAAN_ROAD                            		:Cobblestone Road Vehicle
+
+STR_NAME_RAIL_TRAM                                             	:Standard Gauge Tramway
+STR_TOOLBAR_CAPTION_RAIL_TRAM                                  	:Standard Gauge Tramway
+STR_MENU_TEXT_RAIL_TRAM                                        	:Standard Gauge Tramway
+STR_BUILD_WINDOW_CAPTION_RAIL_TRAM                             	:Standard Gauge Tramway
+STR_AUTOREPLACE_TEXT_RAIL_TRAM                                 	:Standard Gauge Tram
+STR_NEW_ENGINE_TEXT_RAIL_TRAM	                                :Standard Gauge Tram
+
+STR_NAME_ELRL_TRAM                                             	:Standard Gauge Electrified Tramway
+STR_TOOLBAR_CAPTION_ELRL_TRAM                                  	:Standard Gauge Electrified Tramway
+STR_MENU_TEXT_ELRL_TRAM                                        	:Standard Gauge Electrified Tramway
+STR_BUILD_WINDOW_CAPTION_ELRL_TRAM                             	:Standard Gauge Electrified Tramway
+STR_AUTOREPLACE_TEXT_ELRL_TRAM                                 	:Electric Standard Gauge Tram
+STR_NEW_ENGINE_TEXT_ELRL_TRAM	                                :Electric Standard Gauge Tram
+
+STR_NAME_PIPE_ROAD	                                    		:Pipeline
+STR_TOOLBAR_CAPTION_PIPE_ROAD                            		:Pipeline
+STR_MENU_TEXT_PIPE_ROAD                                  		:Pipeline
+STR_BUILD_WINDOW_CAPTION_PIPE_ROAD                       		:Pipeline
+STR_AUTOREPLACE_TEXT_PIPE_ROAD                           		:Pump
+STR_NEW_ENGINE_TEXT_PIPE_ROAD                            		:Pump
+
+STR_NAME_GASLAMP_ROAD	                                    	:Sett Street with Gaslamps
+STR_TOOLBAR_CAPTION_GASLAMP_ROAD                            	:Sett Street with Gaslamps
+STR_MENU_TEXT_GASLAMP_ROAD                                  	:Sett Street with Gaslamps
+STR_BUILD_WINDOW_CAPTION_GASLAMP_ROAD                       	:Sett Street with Gaslamps
+STR_AUTOREPLACE_TEXT_GASLAMP_ROAD                           	:Utility
+STR_NEW_ENGINE_TEXT_GASLAMP_ROAD                            	:Utility
+STR_NAME_GASLAMP_TRAM	                                    	:Gaslamps
+STR_TOOLBAR_CAPTION_GASLAMP_TRAM                            	:Gaslamps
+STR_MENU_TEXT_GASLAMP_TRAM                                  	:Gaslamps
+STR_BUILD_WINDOW_CAPTION_GASLAMP_TRAM                       	:Gaslamps
+STR_AUTOREPLACE_TEXT_GASLAMP_TRAM                           	:Utility
+STR_NEW_ENGINE_TEXT_GASLAMP_TRAM                            	:Utility
+STR_urs_gslp_1_1x1												:Depots: URS GSLP (Coal Gas Tanks)
+STR_urs_gslp_2_1x1												:Depots: URS GSLP (No Gas Tanks)
+
+STR_NAME_TELEPOLES_ROAD	                                    		:Utility Poles
+STR_TOOLBAR_CAPTION_TELEPOLES_ROAD                            		:Utility Poles
+STR_MENU_TEXT_TELEPOLES_ROAD                                  		:Utility Poles
+STR_BUILD_WINDOW_CAPTION_TELEPOLES_ROAD                       		:Utility Poles
+STR_AUTOREPLACE_TEXT_TELEPOLES_ROAD                           		:Utility
+STR_NEW_ENGINE_TEXT_TELEPOLES_ROAD                            		:Utility
+
+STR_NAME_MTRO_TRAM                                             	:Metro Subway
+STR_TOOLBAR_CAPTION_MTRO_TRAM                                  	:Metro Subway
+STR_MENU_TEXT_MTRO_TRAM                                        	:Metro Subway
+STR_BUILD_WINDOW_CAPTION_MTRO_TRAM                             	:Metro Subway
+STR_AUTOREPLACE_TEXT_MTRO_TRAM                                 	:Metro Subway
+STR_NEW_ENGINE_TEXT_MTRO_TRAM	                                :Metro Subway
+
+STR_NAME_MONO_TRAM                                             	:Subway and Monorail
+STR_TOOLBAR_CAPTION_MONO_TRAM                                  	:Subway and Monorail
+STR_MENU_TEXT_MONO_TRAM                                        	:Subway and Monorail
+STR_BUILD_WINDOW_CAPTION_MONO_TRAM                             	:Subway and Monorail
+STR_AUTOREPLACE_TEXT_MONO_TRAM                                 	:Subway and Monorail Train
+STR_NEW_ENGINE_TEXT_MONO_TRAM	                                :Subway and Monorail Train
+
+STR_NAME_INDP_ROAD	                                    		:Industrial Pipeline
+STR_TOOLBAR_CAPTION_INDP_ROAD                            		:Industrial Pipeline
+STR_MENU_TEXT_INDP_ROAD                                  		:Industrial Pipeline
+STR_BUILD_WINDOW_CAPTION_INDP_ROAD                       		:Industrial Pipeline
+STR_AUTOREPLACE_TEXT_INDP_ROAD                           		:Pump
+STR_NEW_ENGINE_TEXT_INDP_ROAD                            		:Pump
+
+STR_NAME_UTIL_ROAD	                                    		:Utility Corridor, Utility Poles & Pipes
+STR_TOOLBAR_CAPTION_UTIL_ROAD                            		:Utility Poles & Pipes
+STR_MENU_TEXT_UTIL_ROAD                                  		:Utility Corridor
+STR_BUILD_WINDOW_CAPTION_UTIL_ROAD                       		:Utility Poles & Pipes
+STR_AUTOREPLACE_TEXT_UTIL_ROAD                           		:Utility
+STR_NEW_ENGINE_TEXT_UTIL_ROAD                            		:Utility
+
+STR_GENERIC_BUILD_VEHICLE            :Build New Road Vehicles
+STR_GENERIC_AUTOREPLACE              :Road Vehicles
+STR_GENERIC_NEW_ENGINE               :road
+
+STR_HIGHWAY_ROAD_NAME                :Custom Road Tunnel
+STR_HIGHWAY_ROAD_TOOLBAR             :Road Tunnel Construction
+STR_HIGHWAY_ROAD_MENU                :Road Tunnel construction

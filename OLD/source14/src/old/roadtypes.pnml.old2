@@ -1,0 +1,52 @@
+//------------------------------------------------TYPE LIST SECTION------------------------------------------------
+
+/*
+ * *********************
+ * Define roadtype table
+ * *********************
+ */
+
+ roadtypetable {
+	ROAD,
+	/* URS */
+	TELE, WIRE, UAAE, UBBN,
+	PIPE, PAAN, PBBN, CEAE,
+	/* URaTT Compatibility */
+	0FFR, ORD2, HAUL, ORD4,
+	SRD0, SDR1, SRD2,
+	ARD0, ARD1, ARD2, ARD3, ARD4, ARD5,
+	ERD0, ERD1, ERD2
+	}
+
+/*
+ * *********************
+ * Define tramtype table
+ * *********************
+ */
+
+ tramtypetable {
+	RAIL, ELRL,
+	/* GRC Compatibility */
+	MTRO,
+	MONO
+	/* URaTT Compatibility */
+	RAL1, ERL1,
+	RAL2, ERL2,
+	RAL3, ERL3,
+	RAL4, ERL4,
+	RAL5, ERL5
+	}
+
+/*
+ * *********************
+ * Define cargotype table
+ * *********************
+ */
+
+ cargotable {
+	PASS,
+	TOUR,
+	MAIL,
+	PCL_,
+	ELEC
+	}

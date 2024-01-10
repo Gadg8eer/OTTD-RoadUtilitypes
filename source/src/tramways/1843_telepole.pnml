@@ -1,0 +1,82 @@
+
+/**********************************************
+ * Spriteset definitions:
+ **********************************************/
+
+/* Spriteset for street overlays */
+spriteset(tramway_overlays_wire, "gfx/tramways/1843_WIRE/tramways_wire.png") {
+     tmpl_catenary_back_workaround_tramtypes()
+}
+
+/* Spriteset for bridge surfaces */
+spriteset(bridge_underlay_wire, "gfx/tramways/1843_WIRE/tramways_underlay.png") {
+    tmpl_bridges_underlay()
+}
+
+/* Spriteset for utility pole underlays */
+spriteset(tramway_catenary_back_wire, "gfx/tramways/1843_WIRE/catenary_back.png") {
+    tmpl_catenary_back_tramtypes()
+}
+
+/* Spriteset for utility pole overlays */
+spriteset(tramway_catenary_front_wire, "gfx/tramways/1843_WIRE/catenary_front.png") {
+    tmpl_catenary_front_tramtypes()
+}
+
+/* Depots */
+spriteset(depot_wire_tramway, "gfx/tramways/1843_WIRE/depot_wire.png") {
+    tmpl_depot_uratt()
+}
+
+/* Roadstop */
+//spriteset(tramwaystop_underlay_wire, "gfx/tramways/1843_WIRE/tramways_tramwaystop_wire.png") {
+//    tmpl_underlay_roadstop()
+//}
+
+/* Underlay */
+	spriteset(tramway_underlays_wire, "gfx/tramways/1843_WIRE/tramways_underlay.png") {
+    tmpl_underlay_tramtypes()
+}
+
+/**********************************************
+ * Roadtype definitions:
+ **********************************************/
+
+/* Note that tramtypes only show in OpenTTD if compatible vehicles are available.
+   examples/tramway_vehicle provides some vehicles for these tramtypes */
+   
+//tramtypes
+
+item(FEAT_TRAMTYPES, SELF, utility_poles, 2) {
+    property {
+        name: string(STR_NAME_TELEPOLES_TRAM);
+        label: "EAcE";
+		introduction_date: date(1878,1,1);
+        powered_tramtype_list: ["EAcE", "EAaG", "Gg8r"];
+		alternative_tramtype_list: ["WIRE", "Wire", "TELE", "Tele", "EAaG", "EAAG", "EABG", "EACG", "EAcG", "EAaE", "EAAE", "EABE", "EACE", "EAcE", "MAA3", "MAB3", "MAC3", "INVI", "Gg8r"];
+        toolbar_caption: string(STR_TOOLBAR_CAPTION_TELEPOLES_TRAM);
+        menu_text: string(STR_MENU_TEXT_TELEPOLES_TRAM);
+        build_window_caption: string(STR_BUILD_WINDOW_CAPTION_TELEPOLES_TRAM);
+        autoreplace_text: string(STR_AUTOREPLACE_TEXT_TELEPOLES_TRAM);
+        new_engine_text: string(STR_NEW_ENGINE_TEXT_TELEPOLES_TRAM);
+        tramtype_flags: bitmask(TRAMTYPE_FLAG_CATENARY, TRAMTYPE_FLAG_NO_HOUSES);
+		//tramtype_extra_flags: bitmask(TRAMTYPE_EXTRA_FLAG_NO_SCRIPT_BUILD, TRAMTYPE_EXTRA_FLAG_NO_TOWN_MODIFY, TRAMTYPE_EXTRA_FLAG_NO_TUNNELS, NO_TRAIN_COLLISION);
+		//tramtype_collision_mode: TRAMTYPE_COLLISION_MODE_NONE;
+		construction_cost: 1;
+		speed_limit: 0;
+		maintenance_cost: 1;
+        sort_order: 57;
+    }
+
+    /* Associate graphics with this tramtype */
+    graphics {
+        //track_overlay: tramway_overlays_wire;
+        //underlay: tramway_underlays_wire;
+        depots: depot_wire_tramway;
+        //bridge_surfaces: bridge_underlay_wire;
+        //roadstops: tramwaystop_underlay_wire;
+		//gui: gui_normal;
+        catenary_front: tramway_catenary_front_wire;
+		catenary_back: tramway_catenary_back_wire;
+    }
+}

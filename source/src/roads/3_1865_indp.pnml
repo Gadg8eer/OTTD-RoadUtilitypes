@@ -1,0 +1,90 @@
+
+/**********************************************
+ * Spriteset definitions:
+ **********************************************/
+
+/* Spriteset for street overlays */
+spriteset(road_overlays_indp, "gfx/roads/1865_INDP/roads_indp.png") {
+    tmpl_overlay_roadtypes_pipe()
+}
+
+/* Spriteset for bridge surfaces */
+spriteset(bridge_underlay_indp, "gfx/roads/1865_INDP/roads_indp.png") {
+    tmpl_bridges_underlay()
+}
+
+/* Spriteset for gaslamp underlays */
+//spriteset(road_catenary_back_indp, "gfx/roads/1865_INDP/catenary_back.png") {
+//    tmpl_catenary_back_roadtypes()
+//}
+
+/* Spriteset for gaslamp overlays */
+spriteset(road_catenary_front_indp, "gfx/roads/1865_INDP/catenary_front.png") {
+    tmpl_catenary_front_roadtypes()
+}
+
+/* Depots */
+spriteset(depot_indp_road, "gfx/roads/1865_INDP/depot_indpipe.png") {
+    tmpl_depot_uratt()
+}
+
+/* Roadstop */
+spriteset(roadstop_underlay_indp, "gfx/roads/1865_INDP/roads_indp.png") {
+    tmpl_underlay_roadstop()
+}
+
+/* Underlay */
+	spriteset(road_underlays_indp, "gfx/roads/1865_INDP/roads_underlay.png") {
+    tmpl_underlay_roadtypes()
+}
+
+/**********************************************
+ * Roadtype definitions:
+ **********************************************/
+
+/* Note that roadtypes only show in OpenTTD if compatible vehicles are available.
+   examples/road_vehicle provides some vehicles for these roadtypes */
+
+item(FEAT_ROADTYPES, SELF, industrial_pipeline, 3) {
+    property {
+        name: string(STR_NAME_INDP_ROAD);
+        label: "IACN";
+		introduction_date: date(1865,1,1);
+        powered_roadtype_list: ["UACG", "UABG", "PIPE", "UTIL", "UAAE", "UBBE",
+		"ROAD", "ELRD", "RCDN", "RECN", "RECE",
+		"SETT", "ASP0", "ASP1", "ASP2", "ELSP", "ELA1", "ELA2",
+		"CBRD", "CBRE", "PVRD", "PVRE", "ISRD", "ISRE",
+		"IBEN", "IBEE", "ICEN", "ICEE", "IDEN", "IDEE",
+		"HBBN",
+		"SRD0", "SRD1", "SRD2",
+		"ARD0", "ARD1", "ARD2", "ARD3", "ARD4",
+		"ERD2",
+		"BLTG", "BLTC", "BLT0", "BLT1", "BLT2", "BLT3", "BLT4", "BLT5", "BLT6",
+		"TNNL", "GTNL", "CTNL", "KTNL",
+		"SMRT"/*, "GABS"*/, "SMTS"/*, "GAcS"*/];
+		alternative_roadtype_list: ["IAaN", "IAAN", "IABN", "IACN", "IAcN"];
+        toolbar_caption: string(STR_TOOLBAR_CAPTION_INDP_ROAD);
+        menu_text: string(STR_MENU_TEXT_INDP_ROAD);
+        build_window_caption: string(STR_BUILD_WINDOW_CAPTION_INDP_ROAD);
+        autoreplace_text: string(STR_AUTOREPLACE_TEXT_INDP_ROAD);
+        new_engine_text: string(STR_NEW_ENGINE_TEXT_INDP_ROAD);
+        roadtype_flags: bitmask(ROADTYPE_FLAG_NO_LEVEL_CROSSING, ROADTYPE_FLAG_NO_HOUSES);
+		roadtype_extra_flags: bitmask(ROADTYPE_EXTRA_FLAG_NO_SCRIPT_BUILD, ROADTYPE_EXTRA_FLAG_NO_TOWN_MODIFY, ROADTYPE_EXTRA_FLAG_NO_TRAIN_COLLISION);
+		roadtype_collision_mode: ROADTYPE_COLLISION_MODE_NONE;
+		construction_cost: 180;
+		//speed_limit: 8 km/h;
+		maintenance_cost: 2;
+        sort_order: 47;
+    }
+
+    /* Associate graphics with this roadtype */
+    graphics {
+        track_overlay: road_overlays_indp;
+        underlay: road_underlays_indp;
+        depots: depot_indp_road;
+        bridge_surfaces: bridge_underlay_indp;
+        roadstops: roadstop_underlay_indp;
+		//gui: gui_normal;
+        /* Catenary is not not implemented here, use the default */
+    }
+}

@@ -1,0 +1,78 @@
+
+/**********************************************
+ * Spriteset definitions:
+ **********************************************/
+
+/* Spriteset for street overlays */
+spriteset(road_overlays_uaae, "gfx/roads/1817_UAAE/roads_uaae.png") {
+    tmpl_overlay_roadtypes()
+}
+
+/* Spriteset for bridge surfaces */
+spriteset(bridge_underlay_uaae, "gfx/roads/1817_UAAE/roads_uaae.png") {
+    tmpl_bridges_underlay()
+}
+
+/* Spriteset for gaslamp underlays */
+spriteset(road_catenary_back_uaae, "gfx/roads/1817_UAAE/catenary_back.png") {
+    tmpl_catenary_back_roadtypes()
+}
+
+/* Spriteset for gaslamp overlays */
+spriteset(road_catenary_front_uaae, "gfx/roads/1817_UAAE/catenary_front.png") {
+    tmpl_catenary_front_roadtypes()
+}
+
+/* Depots */
+spriteset(depot_uaae_road, "gfx/roads/1817_UAAE/depot_uaae.png") {
+    tmpl_depot_road()
+}
+
+/* Roadstop */
+spriteset(roadstop_underlay_uaae, "gfx/roads/1817_UAAE/roads_uaae.png") {
+    tmpl_underlay_roadstop()
+}
+
+/* Underlay */
+	spriteset(road_underlays_uaae, "gfx/roads/1817_UAAE/roads_underlay.png") {
+    tmpl_underlay_roadtypes()
+}
+
+/**********************************************
+ * Roadtype definitions:
+ **********************************************/
+
+/* Note that roadtypes only show in OpenTTD if compatible vehicles are available.
+   examples/road_vehicle provides some vehicles for these roadtypes */
+
+item(FEAT_ROADTYPES, uaae_util, 1) {
+    property {
+        name: string(STR_NAME_UAAE_ROAD);
+        label: "UAAE";
+		introduction_date: date(1817,2,7);
+        powered_roadtype_list: ["UBBE", "PAAN", "PBBN", "PIPE", "CEAE", "TELE", "WIRE", "OAAN", "OBAN"];
+		 
+        toolbar_caption: string(STR_TOOLBAR_CAPTION_UAAE_ROAD);
+        menu_text: string(STR_MENU_TEXT_UAAE_ROAD);
+        build_window_caption: string(STR_BUILD_WINDOW_CAPTION_UAAE_ROAD);
+        autoreplace_text: string(STR_AUTOREPLACE_TEXT_UAAE_ROAD);
+        new_engine_text: string(STR_NEW_ENGINE_TEXT_UAAE_ROAD);
+        roadtype_flags: bitmask(ROADTYPE_FLAG_CATENARY, ROADTYPE_FLAG_NO_LEVEL_CROSSING);
+		construction_cost: 12;
+		speed_limit: 50 km/h;
+		maintenance_cost: 1;
+        sort_order: 97;
+    }
+
+    /* Associate graphics with this roadtype */
+    graphics {
+        track_overlay: road_overlays_uaae;
+        underlay: road_underlays_uaae;
+        depots: depot_uaae_road;
+        bridge_surfaces: bridge_underlay_uaae;
+        roadstops: roadstop_underlay_uaae;
+		//gui: gui_normal;
+        catenary_front: road_catenary_front_uaae;
+		catenary_back: road_catenary_back_uaae;
+    }
+}

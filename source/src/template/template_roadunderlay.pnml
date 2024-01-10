@@ -1,0 +1,66 @@
+
+/**********************************************
+ * Road underlays (tracks + ballast):
+ **********************************************/
+/* Template for underlays; 2x straight road, 5x junctions, 4x corners, 4x slope, 4x half-tile road */
+
+/* Used for bridge surfaces also, therefore the template is split */
+template tmpl_underlay_straight() {
+    ground_tile( 0, 0)
+    ground_tile(75, 0)
+}
+template tmpl_underlay_junctions() {
+    ground_tile(150, 0)
+    ground_tile(225, 0)
+    ground_tile(300, 0)
+    ground_tile(375, 0)
+    ground_tile(450, 0)
+}
+template tmpl_underlay_corners() {
+    ground_tile(  0, 40)
+    ground_tile( 75, 40)
+    ground_tile(150, 40)
+    ground_tile(225, 40)
+}
+template tmpl_underlay_slope() {
+    [300, 40, 64, 39, -31, -8]
+    [375, 40, 64, 23, -31, 0]
+    [450, 40, 64, 23, -31, 0]
+    [525, 40, 64, 39, -31, -8]
+}
+template tmpl_underlay_half_tiles() {
+    ground_tile(  0, 80)
+    ground_tile( 75, 80)
+    ground_tile(150, 80)
+    ground_tile(225, 80)
+}
+template tmpl_underlay_roadtypes() {
+    tmpl_underlay_straight()
+    tmpl_underlay_junctions()
+    tmpl_underlay_corners()
+    tmpl_underlay_slope()
+    tmpl_underlay_half_tiles()
+}
+
+/**********************************************
+ * Tram underlays (tracks + ballast):
+ **********************************************/
+/* Template for underlays; 2x straight tram, 5x junctions, 4x corners, 4x slope, 4x half-tile tram */
+
+/* All other underlays are used for tram surfaces also, therefore the template is split */
+template tmpl_underlay_tramtypes() {
+    tmpl_underlay_straight()
+    tmpl_underlay_junctions()
+    tmpl_underlay_corners()
+    tmpl_underlay_slope()
+    tmpl_underlay_half_tiles()
+}
+
+/* Spriteset containing all underlays */
+spriteset(track_underlays, "gfx/template/roads_underlay.png") {
+    tmpl_underlay_roadtypes()
+}
+/* Spriteset containing all underlays */
+spriteset(road_underlays, "gfx/roads/XXXX_BASE/roads_underlay.png") {
+    tmpl_underlay_roadtypes()
+}

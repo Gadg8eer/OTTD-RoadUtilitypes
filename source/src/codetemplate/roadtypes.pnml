@@ -1,0 +1,94 @@
+//------------------------------------------------RAILTYPER LIST SECTION------------------------------------------------
+
+/*
+ * *********************
+ * Define roadtype table
+ * *********************
+ */
+
+ roadtypetable {
+	ROAD,
+	PAAN,
+	PABN,
+	PBAN,
+	RBAN,
+	HBBN,
+	WAAN,
+	WBBN,
+	RCCN,
+	WBCN,
+	RCDN,
+	RDCN,
+	IADN,
+	ELRD,
+	RBCE,
+	LDCN,
+	RDCE,
+	IBEN,
+	WCEN,
+	RECN,
+	LDCN,
+	ICEN,
+	HFDN,
+	LECN,
+	IDEN,
+	LECE,
+	RHDN,
+	LFCN,
+	RHDE,
+	RHDE,
+	HGDN,
+	HHDN,
+	IEES,
+	HHDS,
+	WHES
+	}
+
+/*
+ * *********************
+ * Define tramtype table
+ * *********************
+ *
+
+ tramtypetable {
+	RAIL,
+	TRAM,
+	CAAN,
+	DAAN,
+	NAAN,
+	UAAN,
+	NABN,
+	AAAU,
+	MTRO,
+	DBBN,
+	NBBN,
+	CEAE,
+	CABE,
+	AAAE,
+	NAAE,
+	ELRL,
+	2AAE,
+	AAAE,
+	VAAN,
+	NCBN,
+	NABE,
+	MONO,
+	NCCN,
+	NBBE,
+	NCBE,
+	CECE,
+	NCCE,
+	NDDE,
+	MECS,
+	SDDS,
+	AAAM,
+	STNDRD: [RAIL, ELRL, SDDS, 2AAE, AAAE],
+	ELSTND: [ELRL, SDDS, 2AAE, AAAE],
+	NARROW: [NAAN, NABN, NBBN, NAAE, NCBN, NABE, NCCN, NBBE, NCBE, NCCE, NDDE, 2AAE, AAAE],
+	ELNRRW: [NAAE, NABE, NBBE, NCBE, NCCE, NDDE, 2AAE, AAAE],
+	SEMAPH: [CAAN, UAAN, AAAU, 2AAE, AAAE],
+	PIPING: [DAAN, UAAN, DBBN, AAAU, AAAE, AAAM],
+	CABLES: [CEAE, CABE, CECE, UEES, AAAE, AAAM],
+	SUBWAY: [MTRO, AAAU, AAAE, AAAM]
+	}
+*/

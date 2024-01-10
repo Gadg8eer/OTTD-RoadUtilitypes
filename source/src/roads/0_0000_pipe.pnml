@@ -1,0 +1,103 @@
+
+template tmpl_overlay_roadtypes_pipe() {
+    [ 0, 0, 64, 31, -31, 0]
+    [75, 0, 64, 31, -31, 0]
+
+    [150, 0, 64, 39, -31, -8]
+    [225, 0, 64, 31, -31, 0]
+    [300, 0, 64, 31, -31, 0]
+    [375, 0, 64, 31, -31, 0]
+    [450, 0, 64, 31, -31, 0]
+
+    [  0, 40, 64, 31, -31, 0]
+    [ 75, 40, 64, 31, -31, 0]
+    [150, 40, 64, 31, -31, 0]
+    [225, 40, 64, 31, -31, 0]
+
+    [300, 40, 64, 39, -31, -8]
+    [375, 40, 64, 21, -31, 0]
+    [450, 40, 64, 21, -31, 0]
+    [525, 40, 64, 39, -31, -8]
+
+    [  0, 80, 64, 31, -31, 0]
+    [ 75, 80, 64, 31, -31, 0]
+    [150, 80, 64, 31, -31, 0]
+    [225, 80, 64, 31, -31, 0]
+}
+
+/**********************************************
+ * Spriteset definitions:
+ **********************************************/
+
+/* Spriteset for street overlays */
+spriteset(road_overlays_pipe, "gfx/roads/0000_PIPE/roads_pipe.png") {
+    tmpl_overlay_roadtypes_pipe()
+}
+
+/* Spriteset for bridge surfaces */
+spriteset(bridge_underlay_pipe, "gfx/roads/0000_PIPE/roads_pipe.png") {
+    tmpl_bridges_underlay()
+}
+
+/* Spriteset for gaslamp underlays */
+spriteset(road_catenary_back_pipe, "gfx/roads/0000_PIPE/catenary_back.png") {
+    tmpl_catenary_back_roadtypes()
+}
+
+/* Spriteset for gaslamp overlays */
+spriteset(road_catenary_front_pipe, "gfx/roads/0000_PIPE/catenary_front.png") {
+    tmpl_catenary_front_roadtypes()
+}
+
+/* Depots */
+spriteset(depot_road_pipeline, "gfx/roads/0000_PIPE/depot_pipe.png") {
+    tmpl_depot_uratt()
+}
+
+/* Roadstop */
+spriteset(roadstop_underlay_pipe, "gfx/roads/0000_PIPE/roads_pipe.png") {
+    tmpl_underlay_roadstop()
+}
+
+/* Underlay */
+	spriteset(road_underlays_pipe, "gfx/roads/0000_PIPE/roads_underlay.png") {
+    tmpl_underlay_roadtypes()
+}
+
+/**********************************************
+ * Roadtype definitions:
+ **********************************************/
+
+/* Note that roadtypes only show in OpenTTD if compatible vehicles are available.
+   examples/road_vehicle provides some vehicles for these roadtypes */
+
+item(FEAT_ROADTYPES, SELF, pipe_util, 0) {
+    property {
+        name: string(STR_NAME_PIPELINE);
+        label: "IAAN";
+		introduction_date: date(0,1,1);
+        powered_roadtype_list: ["ROAD", "ELRD", "IAaN", "IAAN", "IABN", "IACN", "IAcN", "SMRT", "GABS", "SMTS", "GAcS"];
+		alternative_roadtype_list: ["IAaN", "IAAN", "IABN", "IACN", "IAcN"];
+        toolbar_caption: string(STR_TOOLBAR_CAPTION_PIPE_ROAD);
+        menu_text: string(STR_MENU_TEXT_PIPE_ROAD);
+        build_window_caption: string(STR_BUILD_WINDOW_CAPTION_PIPE_ROAD);
+        autoreplace_text: string(STR_AUTOREPLACE_TEXT_PIPE_ROAD);
+        new_engine_text: string(STR_NEW_ENGINE_TEXT_PIPE_ROAD);
+        roadtype_flags: bitmask(ROADTYPE_FLAG_NO_LEVEL_CROSSING, ROADTYPE_FLAG_NO_HOUSES);
+		construction_cost: 0;
+		//speed_limit: 1 km/h;
+		maintenance_cost: 0;
+        sort_order: 97;
+    }
+
+    /* Associate graphics with this roadtype */
+    graphics {
+        track_overlay: road_overlays_pipe;
+        underlay: track_underlays;
+        depots: depot_road_pipeline;
+        bridge_surfaces: bridge_underlay_pipe;
+        roadstops: roadstop_underlay_pipe;
+		//gui: gui_normal;
+        /* Catenary is not not implemented here, use the default */
+    }
+}

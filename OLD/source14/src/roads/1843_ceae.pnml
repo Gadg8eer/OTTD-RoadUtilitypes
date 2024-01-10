@@ -1,0 +1,77 @@
+
+/**********************************************
+ * Spriteset definitions:
+ **********************************************/
+
+/* Spriteset for street overlays */
+spriteset(road_overlays_ceae, "gfx/roads/1843_CEAE/roads_ceae.png") {
+    tmpl_overlay_roadtypes()
+}
+
+/* Spriteset for bridge surfaces */
+spriteset(bridge_underlay_ceae, "gfx/roads/1843_CEAE/roads_ceae.png") {
+    tmpl_bridges_underlay()
+}
+
+/* Spriteset for utility pole underlays */
+spriteset(road_catenary_back_ceae, "gfx/roads/1843_CEAE/catenary_back.png") {
+    tmpl_catenary_back_roadtypes()
+}
+
+/* Spriteset for utility pole overlays */
+spriteset(road_catenary_front_ceae, "gfx/roads/1843_CEAE/catenary_front.png") {
+    tmpl_catenary_front_roadtypes()
+}
+
+/* Depots */
+spriteset(depot_ceae_road, "gfx/roads/1843_CEAE/depot_ceae.png") {
+    tmpl_road_depot_isr()
+}
+
+/* Roadstop */
+spriteset(roadstop_underlay_ceae, "gfx/roads/1843_CEAE/roads_ceae.png") {
+    tmpl_underlay_roadstop()
+}
+
+/* Underlay */
+	spriteset(road_underlays_ceae, "gfx/roads/1843_CEAE/roads_underlay.png") {
+    tmpl_underlay_roadtypes()
+}
+
+/**********************************************
+ * Roadtype definitions:
+ **********************************************/
+
+/* Note that roadtypes only show in OpenTTD if compatible vehicles are available.
+   examples/road_vehicle provides some vehicles for these roadtypes */
+
+item(FEAT_ROADTYPES, ceae_util, 3) {
+    property {
+        name: string(STR_NAME_CEAE_ROAD);
+        label: "CEAE";
+		introduction_date: date(1878,1,1);
+        powered_roadtype_list: ["CEAE", "UAAE", "TELE", "WIRE"];
+        toolbar_caption: string(STR_TOOLBAR_CAPTION_CEAE_ROAD);
+        menu_text: string(STR_MENU_TEXT_CEAE_ROAD);
+        build_window_caption: string(STR_BUILD_WINDOW_CAPTION_CEAE_ROAD);
+        autoreplace_text: string(STR_AUTOREPLACE_TEXT_CEAE_ROAD);
+        new_engine_text: string(STR_NEW_ENGINE_TEXT_CEAE_ROAD);
+        roadtype_flags: bitmask(ROADTYPE_FLAG_CATENARY, ROADTYPE_FLAG_NO_LEVEL_CROSSING);
+		construction_cost: 1;
+		//speed_limit: 8 km/h;
+		maintenance_cost: 1;
+        sort_order: 97;
+    }
+
+    /* Associate graphics with this roadtype */
+    graphics {
+        track_overlay: road_overlays_ceae;
+        underlay: road_underlays_ceae;
+        depots: depot_ceae_road;
+        bridge_surfaces: bridge_underlay_ceae;
+        roadstops: roadstop_underlay_ceae;
+		//gui: gui_normal;
+        catenary_front: road_catenary_front_ceae;
+		catenary_back: road_catenary_back_ceae;
+    }
+}

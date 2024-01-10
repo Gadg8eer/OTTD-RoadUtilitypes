@@ -1,0 +1,3 @@
+
+/* Default ground tile template (re-use as needed) */
+template ground_tile(x, y) { [x, y, 64, 31, -31, 0] }

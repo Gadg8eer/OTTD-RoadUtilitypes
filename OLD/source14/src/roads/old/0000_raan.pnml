@@ -1,0 +1,37 @@
+
+/**********************************************
+ * Roadtype definitions:
+ **********************************************/
+
+/* Note that roadtypes only show in OpenTTD if compatible vehicles are available.
+   examples/road_vehicle provides some vehicles for these roadtypes */
+
+item(FEAT_ROADTYPES, raan_road, 0) {
+    property {
+        name: string(STR_NAME_RAAN_ROAD);
+        label: "ROAD";
+//		introduction_date: date(0,1,1);
+        powered_roadtype_list: ["ROAD"];
+        toolbar_caption: string(STR_TOOLBAR_CAPTION_RAAN_ROAD);
+        menu_text: string(STR_MENU_TEXT_RAAN_ROAD);
+        build_window_caption: string(STR_BUILD_WINDOW_CAPTION_RAAN_ROAD);
+        autoreplace_text: string(STR_AUTOREPLACE_TEXT_RAAN_ROAD);
+        new_engine_text: string(STR_NEW_ENGINE_TEXT_RAAN_ROAD);
+        roadtype_flags: bitmask(ROADTYPE_FLAG_TOWN_BUILD, ROADTYPE_FLAG_NO_LEVEL_CROSSING);
+		construction_cost: 0;
+		speed_limit: 8 km/h;
+		maintenance_cost: 0;
+        sort_order: 27;
+    }
+
+    /* Associate graphics with this roadtype */
+    graphics {
+        track_overlay: road_overlays_raan;
+        underlay: track_underlays;
+        depots: depot_normal_raan;
+        bridge_surfaces: bridge_underlay_raan;
+        roadstops: roadstop_underlay_raan;
+		//gui: gui_normal;
+        /* Catenary is not not implemented here, use the default */
+    }
+}

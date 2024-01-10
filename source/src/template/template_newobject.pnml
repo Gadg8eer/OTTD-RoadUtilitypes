@@ -1,0 +1,58 @@
+/* Template 1x1 */
+
+
+template template_1x1(x,y,filename) {
+    [x+18, y+8, 130, 140, -64, -93, ANIM, filename]
+    [x+162, y+8, 130, 140, -64, -93, ANIM, filename]
+    [x+306, y+8, 130, 140, -64, -93, ANIM, filename]
+    [x+450, y+8, 130, 140, -64, -93, ANIM, filename]
+
+}
+
+
+/* Template 2x2 */
+
+//template for the purchase menu
+template template_2x2_purchase(x,y,filename) {
+    [x, y, 128, 200, -95, -169, ANIM, filename]
+    [x+133, y, 128, 200, -95, -169, ANIM, filename]
+    [x+266, y, 128, 200, -95, -169, ANIM, filename]
+    [x+399, y, 128, 200, -95, -169, ANIM, filename]
+	
+}
+
+//template for sprite tile.1
+template template_2x2_t1(x,y,filename) {
+    [x+32, y, 64, 168, -31, -137, ANIM, filename]
+    [x+165, y, 64, 168, -31, -137, ANIM, filename]
+    [x+298, y, 64, 168, -31, -137, ANIM, filename]
+    [x+431, y, 64, 168, -31, -137, ANIM, filename]
+	
+}
+
+//template for sprite tile.2
+template template_2x2_t2(x,y,filename) {
+    [x+64, y, 64, 184, -31, -153, ANIM, filename]
+    [x+197, y, 64, 184, -31, -153, ANIM, filename]
+    [x+330, y, 64, 184, -31, -153, ANIM, filename]
+    [x+463, y, 64, 184, -31, -153, ANIM, filename]
+	
+}
+
+//template for sprite tile.3
+template template_2x2_t3(x,y,filename) {
+    [x, y, 64, 184, -31, -153, ANIM, filename]
+    [x+133, y, 64, 184, -31, -153, ANIM, filename]
+    [x+266, y, 64, 184, -31, -153, ANIM, filename]
+    [x+399, y, 64, 184, -31, -153, ANIM, filename]
+	
+}
+
+//template for sprite tile.4
+template template_2x2_t4(x,y,filename) {
+    [x+32, y, 64, 200, -31, -169, ANIM, filename]
+    [x+165, y, 64, 200, -31, -169, ANIM, filename]
+    [x+298, y, 64, 200, -31, -169, ANIM, filename]
+    [x+431, y, 64, 200, -31, -169, ANIM, filename]
+	
+}

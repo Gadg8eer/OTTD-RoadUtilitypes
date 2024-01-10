@@ -1,0 +1,77 @@
+
+/**********************************************
+ * Spriteset definitions:
+ **********************************************/
+
+/* Spriteset for street overlays */
+spriteset(road_overlays_ubbe, "gfx/roads/1900_UBBE/roads_ubbe.png") {
+    tmpl_overlay_roadtypes()
+}
+
+/* Spriteset for bridge surfaces */
+spriteset(bridge_underlay_ubbe, "gfx/roads/1900_UBBE/roads_ubbe.png") {
+    tmpl_bridges_underlay()
+}
+
+/* Spriteset for utility pole underlays */
+spriteset(road_catenary_back_ubbe, "gfx/roads/1900_UBBE/catenary_back.png") {
+    tmpl_catenary_back_roadtypes()
+}
+
+/* Spriteset for utility pole overlays */
+spriteset(road_catenary_front_ubbe, "gfx/roads/1900_UBBE/catenary_front.png") {
+    tmpl_catenary_front_roadtypes()
+}
+
+/* Depots */
+spriteset(depot_ubbe_road, "gfx/roads/1900_UBBE/depot_ubbe.png") {
+    tmpl_road_depot_isr()
+}
+
+/* Roadstop */
+spriteset(roadstop_underlay_ubbe, "gfx/roads/1900_UBBE/roads_ubbe.png") {
+    tmpl_underlay_roadstop()
+}
+
+/* Underlay */
+	spriteset(road_underlays_ubbe, "gfx/roads/1900_UBBE/roads_underlay.png") {
+    tmpl_underlay_roadtypes()
+}
+
+/**********************************************
+ * Roadtype definitions:
+ **********************************************/
+
+/* Note that roadtypes only show in OpenTTD if compatible vehicles are available.
+   examples/road_vehicle provides some vehicles for these roadtypes */
+
+item(FEAT_ROADTYPES, ubbe_util, 4) {
+    property {
+        name: string(STR_NAME_UBBE_ROAD);
+        label: "UBBE";
+		introduction_date: date(1878,1,1);
+        powered_roadtype_list: ["UAAE", "PBBN", "CEAE"];
+        toolbar_caption: string(STR_TOOLBAR_CAPTION_UBBE_ROAD);
+        menu_text: string(STR_MENU_TEXT_UBBE_ROAD);
+        build_window_caption: string(STR_BUILD_WINDOW_CAPTION_UBBE_ROAD);
+        autoreplace_text: string(STR_AUTOREPLACE_TEXT_UBBE_ROAD);
+        new_engine_text: string(STR_NEW_ENGINE_TEXT_UBBE_ROAD);
+        roadtype_flags: bitmask(ROADTYPE_FLAG_CATENARY, ROADTYPE_FLAG_NO_LEVEL_CROSSING);
+		construction_cost: 181;
+		//speed_limit: 8 km/h;
+		maintenance_cost: 2;
+        sort_order: 97;
+    }
+
+    /* Associate graphics with this roadtype */
+    graphics {
+        track_overlay: road_overlays_ubbe;
+        underlay: road_underlays_ubbe;
+        depots: depot_ubbe_road;
+        bridge_surfaces: bridge_underlay_ubbe;
+        roadstops: roadstop_underlay_ubbe;
+		//gui: gui_normal;
+        catenary_front: road_catenary_front_ubbe;
+		catenary_back: road_catenary_back_ubbe;
+    }
+}

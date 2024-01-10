@@ -1,0 +1,14 @@
+
+/*
+item(FEAT_ROADTYPES, pipe, 7) {
+	property {
+		label: "PIPE";
+		powered_roadtype_list: ["ROAD", "ELRD", "RCDE", "RECE",
+			"PAAN", "PBBN", "INDP", "UTIL", "UAAE", "UBBE",
+			"IBEN", "IBEE",
+			"SRD0", "SRD1", "SRD2",
+			"CBRD", "CBRE",
+			"ASP0", "ASP1", "ASP2", "ELA0", "ELA1", "ELA2"];
+	}
+}
+*/

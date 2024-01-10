@@ -1,0 +1,76 @@
+
+/**********************************************
+ * Spriteset definitions:
+ **********************************************/
+
+/* Spriteset for street overlays */
+spriteset(road_overlays_pbbn, "gfx/roads/1865_PBBN/roads_pbbn.png") {
+    tmpl_overlay_roadtypes()
+}
+
+/* Spriteset for bridge surfaces */
+spriteset(bridge_underlay_pbbn, "gfx/roads/1865_PBBN/roads_pbbn.png") {
+    tmpl_bridges_underlay()
+}
+
+/* Spriteset for gaslamp underlays */
+spriteset(road_catenary_back_pbbn, "gfx/roads/1865_PBBN/catenary_back.png") {
+    tmpl_catenary_back_roadtypes()
+}
+
+/* Spriteset for gaslamp overlays */
+spriteset(road_catenary_front_pbbn, "gfx/roads/1865_PBBN/catenary_front.png") {
+    tmpl_catenary_front_roadtypes()
+}
+
+/* Depots */
+spriteset(depot_pbbn_road, "gfx/roads/1865_PBBN/depot_pbbn.png") {
+    tmpl_road_depot_isr()
+}
+
+/* Roadstop */
+spriteset(roadstop_underlay_pbbn, "gfx/roads/1865_PBBN/roads_pbbn.png") {
+    tmpl_underlay_roadstop()
+}
+
+/* Underlay */
+	spriteset(road_underlays_pbbn, "gfx/roads/1865_PBBN/roads_underlay.png") {
+    tmpl_underlay_roadtypes()
+}
+
+/**********************************************
+ * Roadtype definitions:
+ **********************************************/
+
+/* Note that roadtypes only show in OpenTTD if compatible vehicles are available.
+   examples/road_vehicle provides some vehicles for these roadtypes */
+
+item(FEAT_ROADTYPES, pbbn_road, 2) {
+    property {
+        name: string(STR_NAME_PBBN_ROAD);
+        label: "PBBN";
+		introduction_date: date(1865,1,1);
+        powered_roadtype_list: ["PIPE", "UAAE", "CEAE"];
+        toolbar_caption: string(STR_TOOLBAR_CAPTION_PBBN_ROAD);
+        menu_text: string(STR_MENU_TEXT_PBBN_ROAD);
+        build_window_caption: string(STR_BUILD_WINDOW_CAPTION_PBBN_ROAD);
+        autoreplace_text: string(STR_AUTOREPLACE_TEXT_PBBN_ROAD);
+        new_engine_text: string(STR_NEW_ENGINE_TEXT_PBBN_ROAD);
+        roadtype_flags: bitmask(ROADTYPE_FLAG_TOWN_BUILD, ROADTYPE_FLAG_NO_LEVEL_CROSSING);
+		construction_cost: 180;
+		speed_limit: 8 km/h;
+		maintenance_cost: 2;
+        sort_order: 97;
+    }
+
+    /* Associate graphics with this roadtype */
+    graphics {
+        track_overlay: road_overlays_pbbn;
+        underlay: road_underlays_pbbn;
+        depots: depot_pbbn_road;
+        bridge_surfaces: bridge_underlay_pbbn;
+        roadstops: roadstop_underlay_pbbn;
+		//gui: gui_normal;
+        /* Catenary is not not implemented here, use the default */
+    }
+}

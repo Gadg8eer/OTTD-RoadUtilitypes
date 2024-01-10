@@ -1,0 +1,15 @@
+
+item (FEAT_ROADTYPES, pedway) {
+	property {
+		label:						"TRD_";
+		powered_roadtype_list:		["ROAD", "ELRD", "SMRT", "SMTS"];
+		alternative_roadtype_list:	["UABG", "PIPE", "UAcG", "INDP"];
+	}
+}
+
+item (FEAT_ROADTYPES, road) {
+	property {
+		label:						"ROAD";
+		alternative_roadtype_list:	["TRD_", "UABG", "PIPE", "UAcG", "INDP"];
+	}
+}

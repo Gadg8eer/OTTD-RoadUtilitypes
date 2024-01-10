@@ -1,0 +1,73 @@
+
+/**********************************************
+ * Spriteset definitions:
+ **********************************************/
+
+/* Spriteset for metro overlays */
+spriteset(tram_overlays_mtro, "gfx/tramways/1863_MTRO/tram_mtro.png") {
+    tmpl_overlay_roadtypes()
+}
+alternative_sprites (tram_overlays_mtro, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/tramways/1863_MTRO/tram_mtro32.png") {
+	tmpl_overlay_roadtypes()
+}
+
+/* Spriteset for bridge surfaces */
+spriteset(bridge_underlay_mtro, "gfx/tramways/1863_MTRO/roads_underlay.png") {
+    tmpl_bridges_underlay()
+}
+
+/* Depots */
+spriteset(depot_mtro_tram, "gfx/tramways/1863_MTRO/depot_mtro.png") {
+    tmpl_road_depot_isr()
+}
+
+/* Roadstop */
+spriteset(roadstop_underlay_mtro, "gfx/tramways/1863_MTRO/tram_mtro.png") {
+    tmpl_underlay_roadstop()
+}
+alternative_sprites (roadstop_underlay_mtro, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/tramways/1863_MTRO/tram_stop_mtro32.png") {
+	tmpl_underlay_roadstop()
+}
+
+/* Underlay */
+	spriteset(tram_underlays_mtro, "gfx/tramways/1863_MTRO/roads_underlay.png") {
+    tmpl_underlay_roadtypes()
+}
+
+/**********************************************
+ * Tramtype definitions:
+ **********************************************/
+
+/* Note that roadtypes only show in OpenTTD if compatible vehicles are available.
+   examples/road_vehicle provides some vehicles for these roadtypes */
+
+item(FEAT_TRAMTYPES, mtro_mtro, 4) {
+    property {
+        name: string(STR_NAME_MTRO_TRAM);
+        label: "MTRO";
+		introduction_date: date(1863,2,7);
+        powered_tramtype_list: ["MTRO", "AAAM"];
+        toolbar_caption: string(STR_TOOLBAR_CAPTION_MTRO_TRAM);
+        menu_text: string(STR_MENU_TEXT_MTRO_TRAM);
+        build_window_caption: string(STR_BUILD_WINDOW_CAPTION_MTRO_TRAM);
+        autoreplace_text: string(STR_AUTOREPLACE_TEXT_MTRO_TRAM);
+        new_engine_text: string(STR_NEW_ENGINE_TEXT_MTRO_TRAM);
+        //tramtype_flags: bitmask(TRAMTYPE_FLAG_NO_LEVEL_CROSSING, TRAMTYPE_FLAG_NO_HOUSES);
+		construction_cost: 12;
+		//speed_limit: 50 km/h;
+		maintenance_cost: 1;
+        sort_order: 97;
+    }
+
+    /* Associate graphics with this roadtype */
+    graphics {
+        track_overlay: tram_overlays_mtro;
+        underlay: tram_underlays_mtro;
+        depots: depot_mtro_tram;
+        bridge_surfaces: bridge_underlay_mtro;
+        //roadstops: roadstop_underlay_mtro;
+		//gui: gui_normal;
+        //catenary_front: road_catenary_front_uaae;
+		//catenary_back: road_catenary_back_uaae;
+	}
+}

@@ -1,0 +1,95 @@
+
+/**********************************************
+ * Spriteset definitions:
+ **********************************************/
+
+/* Spriteset for street overlays */
+spriteset(road_overlays_wire, "gfx/roads/1843_WIRE/roads_wire.png") {
+     tmpl_catenary_back_workaround_roadtypes()
+}
+
+/* Spriteset for bridge surfaces */
+spriteset(bridge_underlay_wire, "gfx/roads/1843_WIRE/roads_underlay.png") {
+    tmpl_bridges_underlay()
+}
+
+/* Spriteset for utility pole underlays */
+spriteset(road_catenary_back_wire, "gfx/roads/1843_WIRE/catenary_back.png") {
+    tmpl_catenary_back_roadtypes()
+}
+
+/* Spriteset for utility pole overlays */
+spriteset(road_catenary_front_wire, "gfx/roads/1843_WIRE/catenary_front.png") {
+    tmpl_catenary_front_roadtypes()
+}
+
+/* Depots */
+spriteset(depot_wire_road, "gfx/roads/1843_WIRE/depot_wire.png") {
+    tmpl_depot_uratt()
+}
+
+/* Roadstop */
+spriteset(roadstop_underlay_wire, "gfx/roads/1843_WIRE/roads_roadstop_wire.png") {
+    tmpl_underlay_roadstop()
+}
+
+/* Underlay */
+	spriteset(road_underlays_wire, "gfx/roads/1843_WIRE/roads_underlay.png") {
+    tmpl_underlay_roadtypes()
+}
+
+/**********************************************
+ * Roadtype definitions:
+ **********************************************/
+
+/* Note that roadtypes only show in OpenTTD if compatible vehicles are available.
+   examples/road_vehicle provides some vehicles for these roadtypes */
+   
+//roadtypes
+
+item(FEAT_ROADTYPES, utility_poles, 2) {
+    property {
+        name: string(STR_NAME_WIRE_ROAD);
+        label: "WIRE";
+		introduction_date: date(1878,1,1);
+        powered_roadtype_list: ["UTIL", "WIRE", "CEAE", "UTIL", "GSLP", "GLMP", "UAAE", "UBBE",
+		"ROAD", "ELRD", "OLD_", "RAAE", "RCDE", "RECE",
+		//"ASP0", "ASP1", "ASP2",
+		"ELSP", "ELA1", "ELA2",
+		"CBRD", "CBRE", "PVRD", "PVRE", "ISRD", "ISRE",
+		"ELHL",
+		"IBEN", "IBEE",
+		"ARD0", "ARD1", "ARD2", "ARD3", "ARD4", "ARD5", "AER0", "AER1", "AER2", "AER3", "AER4", "AER5",
+		"SRD0", "SRD1", "SRD2",
+		"URD0", "UER0", "URD1", "URD2", "URD3", "UER1", "URD2", "UER2", "UER3",
+		"IRD0", "IRD1", "IRD2", "IRD3", "IER0", "IER1", "IER2", "IER3",
+		"FORD", "FRZN",
+		"CBRD", "CBRE",
+		"BLTG", "BLTC", "BLT0", "BLT1", "BLT2", "BLT3", "BLT4", "BLT5", "BLT6",
+		"TNNL", "GTNL", "CTNL", "KTNL",
+		"SMRT", "SMTS"];
+		alternative_roadtype_list: ["WIRE", "UTIL", "TELE"];
+        toolbar_caption: string(STR_TOOLBAR_CAPTION_WIRE_ROAD);
+        menu_text: string(STR_MENU_TEXT_WIRE_ROAD);
+        build_window_caption: string(STR_BUILD_WINDOW_CAPTION_WIRE_ROAD);
+        autoreplace_text: string(STR_AUTOREPLACE_TEXT_WIRE_ROAD);
+        new_engine_text: string(STR_NEW_ENGINE_TEXT_WIRE_ROAD);
+        roadtype_flags: bitmask(ROADTYPE_FLAG_CATENARY, ROADTYPE_FLAG_NO_LEVEL_CROSSING);
+		construction_cost: 1;
+		//speed_limit: 8 km/h;
+		maintenance_cost: 1;
+        sort_order: 57;
+    }
+
+    /* Associate graphics with this roadtype */
+    graphics {
+        track_overlay: road_overlays_wire;
+        underlay: road_underlays_wire;
+        depots: depot_wire_road;
+        bridge_surfaces: bridge_underlay_wire;
+        roadstops: roadstop_underlay_wire;
+		//gui: gui_normal;
+        catenary_front: road_catenary_front_wire;
+		catenary_back: road_catenary_back_wire;
+    }
+}

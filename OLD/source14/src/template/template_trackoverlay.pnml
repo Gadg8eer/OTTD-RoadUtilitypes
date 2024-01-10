@@ -1,0 +1,51 @@
+
+/**********************************************
+ * Track overlays (tracks without ballast):
+ **********************************************/
+template tmpl_overlay_roadtypes() {
+    [ 0, 0, 64, 31, -31, 0]
+    [75, 0, 64, 31, -31, 0]
+
+    [150, 0, 64, 31, -31, 0]
+    [225, 0, 64, 31, -31, 0]
+    [300, 0, 64, 31, -31, 0]
+    [375, 0, 64, 31, -31, 0]
+    [450, 0, 64, 31, -31, 0]
+
+    [  0, 40, 64, 31, -31, 0]
+    [ 75, 40, 64, 31, -31, 0]
+    [150, 40, 64, 31, -31, 0]
+    [225, 40, 64, 31, -31, 0]
+
+    [300, 40, 64, 39, -31, -8]
+    [375, 40, 64, 21, -31, 0]
+    [450, 40, 64, 21, -31, 0]
+    [525, 40, 64, 39, -31, -8]
+
+    [  0, 80, 64, 31, -31, 0]
+    [ 75, 80, 64, 31, -31, 0]
+    [150, 80, 64, 31, -31, 0]
+    [225, 80, 64, 31, -31, 0]
+}
+
+/* Spritesets for test overlays */
+spriteset(road_overlays_red, "gfx/roads_red.png") {
+    tmpl_overlay_roadtypes()
+}
+spriteset(road_overlays_blue, "gfx/roads_blue.png") {
+    tmpl_overlay_roadtypes()
+}
+spriteset(road_overlays_yellow, "gfx/roads_yellow.png") {
+    tmpl_overlay_roadtypes()
+}
+spriteset(tram_overlays_green, "gfx/tram_green.png") {
+    tmpl_overlay_roadtypes()
+}
+
+spriteset(road_overlays_base, "gfx/roads/XXXX_BASE/roads_road.png") {
+    tmpl_overlay_roadtypes()
+}
+/* Spriteset for road overlays */
+spriteset(road_overlays_road, "gfx/roads/0000_RAAN/roads_road.png") {
+    tmpl_overlay_roadtypes()
+}

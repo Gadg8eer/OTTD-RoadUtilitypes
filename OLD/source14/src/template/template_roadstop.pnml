@@ -1,0 +1,27 @@
+
+/**********************************************
+ * Roadstop sprites:
+ **********************************************/
+
+template tmpl_underlay_roadstop() {
+    ground_tile(  0, 120)
+    ground_tile( 75, 120)
+    ground_tile(150, 120)
+    ground_tile(225, 120)
+}
+
+spriteset(roadstop_underlay_red, "gfx/roads_red.png") {
+    tmpl_underlay_roadstop()
+}
+spriteset(roadstop_underlay_blue, "gfx/roads_blue.png") {
+    tmpl_underlay_roadstop()
+}
+spriteset(roadstop_underlay_yellow, "gfx/roads_yellow.png") {
+    tmpl_underlay_roadstop()
+}
+spriteset(roadstop_underlay_base, "gfx/roads/XXXX_BASE/roads_road.png") {
+    tmpl_underlay_roadstop()
+}
+/* spriteset(roadstop_underlay_road, "gfx/roads/0000_RAAN/roads_raan.png") {
+    tmpl_underlay_roadstop()
+} */
